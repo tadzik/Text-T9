@@ -23,7 +23,7 @@ my %default-keys;
 %default-keys{$_} = 8 for <t u v>;
 %default-keys{$_} = 9 for <w x y z>;
 
-#= get a list of matching words
+#= get a list of words from @words matching $input
 sub t9_find_words(Int $input as Str, @words, %optkeys?) is export {
     my %keys = %default-keys, %optkeys;
     gather for @words -> $candidate {
@@ -33,5 +33,3 @@ sub t9_find_words(Int $input as Str, @words, %optkeys?) is export {
         }
     }
 }
-
-
